@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="joke_background">#ff000000</color>
+    <color name="joke_text_normal">#ffffffff</color>
+    <color name="joke_text_faded">#80ffffff</color>
+</resources>

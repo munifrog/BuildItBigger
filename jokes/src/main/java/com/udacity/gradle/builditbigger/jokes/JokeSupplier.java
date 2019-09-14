@@ -1,7 +1,13 @@
 package com.udacity.gradle.builditbigger.jokes;
 
 public class JokeSupplier {
-    public static String getJoke() {
-        return "This is supposed to be a funny joke!";
+    private static final String NO_PUNCHLINE = "";
+
+    public static String getJokeLeadup() {
+        return "A horse walks into the bar...";
+    }
+
+    public static String getPunchline() {
+        return "... and the bartender says 'Why the long face?'";
     }
 }

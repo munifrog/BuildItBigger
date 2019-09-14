@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Joke Display Library</string>
+    <string name="title_activity_main_joke">MainJokeActivity</string>
+    <string name="instructions_for_punchline">(Press the button to hear the end of the joke)</string>
+</resources>
