@@ -13,6 +13,7 @@ public class MainJokeActivity extends AppCompatActivity {
     public static final String JOKE_DELIVERY_INITIAL = "tell_joke_leadup";
     public static final String JOKE_DELIVERY_PUNCHLINE = "tell_joke_delivery";
 
+    FloatingActionButton mFab;
     TextView mTvJokeLeadUp;
     TextView mTvJokeDelivery;
     TextView mTvInstructions;
@@ -32,6 +33,7 @@ public class MainJokeActivity extends AppCompatActivity {
 
             mTvInstructions = findViewById(R.id.tv_joke_instruction);
 
+
             mTvJokeDelivery = findViewById(R.id.tv_joke_delivery);
             String punchline = intent.getStringExtra(JOKE_DELIVERY_PUNCHLINE);
             if (punchline != null && !punchline.isEmpty()) {
@@ -39,12 +41,13 @@ public class MainJokeActivity extends AppCompatActivity {
                 mTvJokeDelivery.setVisibility(View.INVISIBLE);
                 mTvJokeDelivery.setText(punchline);
 
-                FloatingActionButton fab = findViewById(R.id.fab);
-                fab.setOnClickListener(new View.OnClickListener() {
+                mFab = findViewById(R.id.fab);
+                mFab.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         mTvJokeDelivery.setVisibility(View.VISIBLE);
                         mTvInstructions.setVisibility(View.GONE);
+                        mFab.setVisibility(View.GONE);
                     }
                 });
             }
