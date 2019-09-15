@@ -22,7 +22,7 @@ public class RetrieveJoke extends AsyncTask<Pair<String, Integer>, Void, JokeBea
 
     private Listener mListener;
 
-    RetrieveJoke(Listener listener) {
+    public RetrieveJoke(Listener listener) {
         mListener = listener;
     }
 
