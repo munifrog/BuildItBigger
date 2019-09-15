@@ -44,7 +44,7 @@ Android SDK Manager.
 You will also notice a folder called backend in the starter code. 
 It will be used in step 3 below, and you do not need to worry about it for now.
 
-When you can build an deploy this starter code to an emulator, you're ready to
+When you can build and deploy this starter code to an emulator, you're ready to
 move on.
 
 ### Step 1: Create a Java library
@@ -102,7 +102,7 @@ Now you are ready to continue!
 
 Introduce a project dependency between your Java library 
 and your GCE module, and modify the GCE starter code to pull jokes from your Java library. 
-Create an AsyncTask to retrieve jokes using the template included int these 
+Create an AsyncTask to retrieve jokes using the template included in these 
 [instructions](https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/77e9910911d5412e5efede5fa681ec105a0f02ad/HelloEndpoints#2-connecting-your-android-app-to-the-backend). 
 Make the button kick off a task to retrieve a joke, 
 then launch the activity from your Android Library to display it.
