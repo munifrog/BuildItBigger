@@ -27,4 +27,8 @@ public class MyEndpoint {
         return response;
     }
 
+    @ApiMethod(name = "getJokeAt")
+    public JokeBean getJokeAt(@Named("position") int position) {
+        return new JokeBean(position);
+    }
 }

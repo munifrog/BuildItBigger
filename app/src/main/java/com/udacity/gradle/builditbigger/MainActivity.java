@@ -2,20 +2,20 @@ package com.udacity.gradle.builditbigger;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.udacity.gradle.builditbigger.jokedisplaylibrary.MainJokeActivity;
-import com.udacity.gradle.builditbigger.jokes.JokeSupplier;
 
 import static com.udacity.gradle.builditbigger.jokedisplaylibrary.MainJokeActivity.JOKE_DELIVERY_INITIAL;
 import static com.udacity.gradle.builditbigger.jokedisplaylibrary.MainJokeActivity.JOKE_DELIVERY_PUNCHLINE;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements RetrieveJoke.Listener {
+    private static int mJokeCount = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,14 +47,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
+        mJokeCount++;
+        RetrieveJoke jokeRetriever = new RetrieveJoke(this);
+        //noinspection unchecked
+        jokeRetriever.execute(new Pair(getString(R.string.app_name),mJokeCount));
+    }
+
+    @Override
+    public void onRetrieved(String intro, String punchline) {
         Intent intent = new Intent(this, MainJokeActivity.class);
-        intent.putExtra(JOKE_DELIVERY_INITIAL, JokeSupplier.getJokeLeadup());
-        String punchline = JokeSupplier.getPunchline();
+        intent.putExtra(JOKE_DELIVERY_INITIAL, intro);
         if (!punchline.isEmpty()) {
             intent.putExtra(JOKE_DELIVERY_PUNCHLINE, punchline);
         }
         startActivity(intent);
     }
 
-
+    @Override
+    public void onInternetFailure(Exception e) {
+        e.printStackTrace();
+    }
 }
