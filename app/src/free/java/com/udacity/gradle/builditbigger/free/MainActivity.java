@@ -1,7 +1,8 @@
-package com.udacity.gradle.builditbigger;
+package com.udacity.gradle.builditbigger.free;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -13,6 +14,8 @@ import android.widget.ProgressBar;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
+import com.udacity.gradle.builditbigger.R;
+import com.udacity.gradle.builditbigger.RetrieveJoke;
 import com.udacity.gradle.builditbigger.jokedisplaylibrary.MainJokeActivity;
 
 import static com.udacity.gradle.builditbigger.jokedisplaylibrary.MainJokeActivity.JOKE_DELIVERY_INITIAL;
@@ -110,7 +113,14 @@ public class MainActivity extends AppCompatActivity implements RetrieveJoke.List
 
     @Override
     public void onInternetFailure(Exception e) {
-        mProgressBar.setVisibility(View.GONE);
         e.printStackTrace();
+        Handler mainHandler = new Handler(getMainLooper());
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                mProgressBar.setVisibility(View.GONE);
+            }
+        };
+        mainHandler.post(runnable);
     }
 }
