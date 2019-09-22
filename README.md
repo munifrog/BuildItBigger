@@ -33,7 +33,7 @@ time duplicating the original behavior using the same.
 
 ## License
 
-This project started as a task within the [Udacity Android Developer Nanodegree Course.](https://www.udacity.com/course/android-developer-nanodegree-by-google--nd801) 
+This project started as a task within the [Udacity Android Developer Nanodegree Course](https://www.udacity.com/course/android-developer-nanodegree-by-google--nd801) 
 and Udacity (or Google) owns the rights for the project idea.
 
 While I personally prefer indirect sources for finding solutions to puzzles, you may learn from
