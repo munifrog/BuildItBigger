@@ -1,4 +1,4 @@
-# BuildItBigger
+## Introduction
 
 Android app that demonstrates the process of taking a free app with banner ads (which always
 display) and updating the code to use interstitial ads (which only display at certain times) and
@@ -20,10 +20,10 @@ time duplicating the original behavior using the same.
 1. First, clone this repository
    * `git clone https://github.com/munifrog/BuildItBigger.git`
 1. Open this directory using Android Studio
-1. Start the Google Cloud Endpoint using Gradle (instructions here use the Gradle side bar)
+1. Start the Google Cloud Endpoint using Gradle (instructions here using the side bar options)
    * _:backend_
    * _app engine standard environment_
-   * _appengineStart_ (when done you should use _appengineStop_)
+   * _appengineStart_
 1. Launch the app on an emulator
    * The _RetrieveJoke.java_ assumes the emulator IP address of `10.0.2.2`
 1. When done, stop the Google Cloud Endpoint using Gradle
@@ -32,7 +32,12 @@ time duplicating the original behavior using the same.
    * _appengineStop_
 
 ## License
-This project started as a task within the [Udacity Android Developer Nanodegree Course](https://www.udacity.com/course/android-developer-nanodegree-by-google--nd801)
-Udacity (or Google) owns the rights for the project idea and regularly checks for plagiarism.
-I preferred finding information from other sources, but you may learn from what I have done, if
-that helps.
+
+This project started as a task within the [Udacity Android Developer Nanodegree Course.](https://www.udacity.com/course/android-developer-nanodegree-by-google--nd801) 
+and Udacity (or Google) owns the rights for the project idea.
+
+While I personally prefer indirect sources for finding solutions to puzzles, you may learn from
+what I have done, if that helps. Just be careful to avoid plagiarism if you are also taking this
+course and looking for answers.
+
+If, on the other hand, you want to build on what I have done, that is also welcome.
